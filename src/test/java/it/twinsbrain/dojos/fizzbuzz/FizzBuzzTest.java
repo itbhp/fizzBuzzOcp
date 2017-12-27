@@ -21,4 +21,9 @@ public class FizzBuzzTest {
   public void threeIsFizz(int sample) throws Exception {
     assertThat(FizzBuzz.of(sample), is("Fizz"));
   }
+
+  @Test
+  public void fiveAsBuzz() throws Exception {
+    assertThat(FizzBuzz.of(5), is("Buzz"));
+  }
 }

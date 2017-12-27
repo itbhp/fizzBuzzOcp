@@ -14,7 +14,8 @@ public class FizzBuzz {
   static String of(int i) {
     return new FizzBuzz
       (
-        new FizzAdapter()
+        new BuzzAdapter()
+      , new FizzAdapter()
       , new StringAdapter()
       ).valueFor(i);
   }
@@ -49,6 +50,19 @@ public class FizzBuzz {
     @Override
     public String adapt(int val) {
       return "Fizz";
+    }
+  }
+
+  static class BuzzAdapter implements ChainedAdapter{
+
+    @Override
+    public boolean canAdapt(int val) {
+      return val == 5;
+    }
+
+    @Override
+    public String adapt(int val) {
+      return "Buzz";
     }
   }
 }
