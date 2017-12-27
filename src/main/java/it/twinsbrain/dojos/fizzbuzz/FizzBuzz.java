@@ -12,10 +12,13 @@ public class FizzBuzz {
   }
 
   static String of(int i) {
+    BuzzAdapter buzzAdapter = new BuzzAdapter();
+    FizzAdapter fizzAdapter = new FizzAdapter();
     return new FizzBuzz
       (
-        new BuzzAdapter()
-      , new FizzAdapter()
+        new ComposingAdapter(fizzAdapter, buzzAdapter)
+      , buzzAdapter
+      , fizzAdapter
       , new StringAdapter()
       ).valueFor(i);
   }
@@ -64,4 +67,5 @@ public class FizzBuzz {
       return "Buzz";
     }
   }
+
 }

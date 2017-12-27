@@ -2,6 +2,7 @@ package it.twinsbrain.dojos.fizzbuzz;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -17,7 +18,7 @@ public class FizzBuzzTest {
   }
 
   @Test
-  @Parameters({"3", "6", "9"})
+  @Parameters({"3", "6", "9", "12", "18", "21", "24", "93"})
   public void threeIsFizz(int sample) throws Exception {
     assertThat(FizzBuzz.of(sample), is("Fizz"));
   }
@@ -26,5 +27,11 @@ public class FizzBuzzTest {
   @Parameters({"5", "10", "20", "25"})
   public void fiveAsBuzz(int sample) throws Exception {
     assertThat(FizzBuzz.of(sample), is("Buzz"));
+  }
+
+  @Test
+  @Parameters({"15", "30", "45", "60", "90"})
+  public void fifteenIsFizzBuzz(int sample) throws Exception {
+    assertThat(FizzBuzz.of(sample), is("FizzBuzz"));
   }
 }
