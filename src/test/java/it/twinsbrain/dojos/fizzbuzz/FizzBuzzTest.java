@@ -12,5 +12,4 @@ public class FizzBuzzTest {
     assertThat(FizzBuzz.of(1), is("1"));
   }
 
-
 }
