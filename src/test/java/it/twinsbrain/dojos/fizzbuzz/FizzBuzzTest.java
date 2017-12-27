@@ -23,7 +23,8 @@ public class FizzBuzzTest {
   }
 
   @Test
-  public void fiveAsBuzz() throws Exception {
-    assertThat(FizzBuzz.of(5), is("Buzz"));
+  @Parameters({"5", "10", "20", "25"})
+  public void fiveAsBuzz(int sample) throws Exception {
+    assertThat(FizzBuzz.of(sample), is("Buzz"));
   }
 }

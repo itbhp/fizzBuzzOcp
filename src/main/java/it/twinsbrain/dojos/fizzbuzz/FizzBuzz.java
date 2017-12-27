@@ -56,7 +56,7 @@ public class FizzBuzz {
 
     @Override
     public boolean canAdapt(int val) {
-      return val == 5;
+      return val % 5 == 0;
     }
 
     @Override
