@@ -1,7 +1,7 @@
 package it.twinsbrain.dojos.fizzbuzz;
 
 import static java.lang.String.valueOf;
-import static java.util.Arrays.stream;
+import static org.eclipse.collections.impl.utility.ArrayIterate.select;
 
 public class FizzBuzz {
 
@@ -21,10 +21,9 @@ public class FizzBuzz {
   }
 
   public String valueFor(int i){
-    return stream(adapters)
-      .filter(adapter -> adapter.canAdapt(i))
-      .findFirst()
-      .map(adapter -> adapter.adapt(i)).get();
+    return select(adapters, adapter -> adapter.canAdapt(i))
+      .getFirst()
+      .adapt(i);
   }
 
   static class StringAdapter implements ChainedAdapter{
