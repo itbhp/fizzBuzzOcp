@@ -1,7 +1,5 @@
 package it.twinsbrain.dojos.fizzbuzz;
 
-import java.util.Arrays;
-
 import static java.lang.String.valueOf;
 import static java.util.Arrays.stream;
 
@@ -14,7 +12,11 @@ public class FizzBuzz {
   }
 
   static String of(int i) {
-    return new FizzBuzz(new FizzAdapter(),new StringAdapter()).valueFor(i);
+    return new FizzBuzz
+      (
+        new FizzAdapter()
+      , new StringAdapter()
+      ).valueFor(i);
   }
 
   public String valueFor(int i){
@@ -41,7 +43,7 @@ public class FizzBuzz {
 
     @Override
     public boolean canAdapt(int val) {
-      return val == 3;
+      return val % 3 == 0;
     }
 
     @Override
